@@ -249,6 +249,26 @@ footer{
   .chip:hover{ transform: translateY(-1px); }
 }
 
+/* Brand scroller */
+.brand-scroller{ margin-top: 18px; overflow: hidden; }
+.brand-row{ display:flex; align-items:center; gap:40px; }
+.brand-inner{ display:flex; gap:40px; align-items:center; }
+.brand-item img{ width:140px; height:auto; display:block; filter:grayscale(1) opacity(0.95); }
+
+/* animate duplicated track for seamless scroll */
+.brand-track{ display:flex; gap:40px; align-items:center; white-space:nowrap; }
+.brand-wrap{ display:flex; min-width:100%; overflow:hidden; }
+.brand-anim{ display:flex; gap:40px; align-items:center; animation:brand-scroll 20s linear infinite; }
+
+@keyframes brand-scroll{
+  from{ transform: translateX(0%); }
+  to{ transform: translateX(-50%); }
+}
+
+@media (max-width: 640px){
+  .brand-item img{ width:96px; }
+}
+
 /* Headshot styles */
 .headshot-wrap{ flex: 0 0 auto; display:flex; align-items:center; }
 .headshot{ width: 96px; height: 96px; border-radius: 50%; object-fit: cover; display:block; }
