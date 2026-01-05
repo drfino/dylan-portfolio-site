@@ -100,7 +100,8 @@ header{
   margin-top: 6px;
   color: var(--muted);
   font-size: 15.5px;
-  max-width: 72ch;
+  max-width: none;
+  width: 100%;
 }
 
 .section{
@@ -239,11 +240,16 @@ footer{
 }
 
 @media (min-width: 820px){
-  header{ grid-template-columns: auto 1fr; align-items: center; }
   .card.featured{ grid-column: span 12; }
   .card.half{ grid-column: span 6; }
   .twocol{ grid-template-columns: 1fr 1fr; }
-  .topline{ gap: 18px; }
+
+  /* Layout header: headshot | name (grow) | nav */
+  .topline{ display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 18px; }
+  .headshot-wrap{ margin-right: 12px; }
+  .name{ align-self: start; max-width: 60%; }
+  .links{ align-self: start; justify-self: end; }
+  .summary{ margin-top: 8px; max-width: none; width: 100%; text-align: left; margin-left: 0; margin-right: 0; }
 }
 @media (prefers-reduced-motion: no-preference){
   .card{ transition: transform 180ms ease, background 180ms ease; }
@@ -257,7 +263,7 @@ footer{
 .brand-track{ display:flex; gap:40px; align-items:center; min-width: max-content; will-change: transform; }
 /* Standardize brand logo sizing: keep aspect ratio, limit height for consistency */
 .brand-item{ flex: 0 0 auto; }
-.brand-item img{ width: auto; height: 48px; max-height: 48px; display:block; opacity:0.95; }
+.brand-item img{ width: auto; height: 48px; max-height: 48px; max-width: auto; display:block; opacity:0.95; }
 
 @media (max-width: 640px){
   .brand-item img{ height: 36px; max-height: 36px; }
@@ -271,17 +277,11 @@ footer{
   .brand-item img{ height: 56px; max-height: 56px; }
 }
 
-/* Header spacing tweak for name + headshot */
-@media (min-width: 820px){
-  .topline{ align-items: center; }
-  .name{ margin-left: 12px; max-width: 60%; }
-}
-
 /* Headshot styles */
 .headshot-wrap{ flex: 0 0 auto; display:flex; align-items:center; }
-.headshot{ width: 96px; height: 96px; border-radius: 50%; object-fit: cover; display:block; }
+.headshot{ width: 96px; height: 96px; border-radius: 50%; object-fit: cover; object-position: 50% 10%; display:block; }
 @media (min-width: 600px){
-  .headshot{ width: 160px; height: 160px; }
+  .headshot{ width: 160px; height: 160px; object-position: 50% 10%; }
 }
 
 /* NPS joke section */
