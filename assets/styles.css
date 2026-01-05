@@ -247,7 +247,7 @@ footer{
   /* Layout header: headshot | name (grow) | nav */
   .topline{ display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 18px; }
   .headshot-wrap{ margin-right: 12px; }
-  .name{ align-self: start; max-width: 60%; }
+  .name{ align-self: start; max-width: 70%; }
   .links{ align-self: start; justify-self: end; }
   .summary{ margin-top: 8px; max-width: none; width: 100%; text-align: left; margin-left: 0; margin-right: 0; }
 }
