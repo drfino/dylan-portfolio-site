@@ -253,7 +253,7 @@ footer{
 .brand-scroller{ margin-top: 18px; overflow: hidden; }
 .brand-row{ display:flex; align-items:center; gap:40px; }
 .brand-inner{ display:flex; gap:40px; align-items:center; }
-.brand-item img{ width:140px; height:auto; display:block; filter:grayscale(1) opacity(0.95); }
+.brand-item img{ width:140px; height:auto; display:block; opacity:0.9; }
 
 /* animate duplicated track for seamless scroll */
 .brand-track{ display:flex; gap:40px; align-items:center; white-space:nowrap; }
