@@ -16,10 +16,10 @@
       <div class="topline">
         <div class="headshot-wrap">
           <img src="assets/images/dfino headshot.jpeg" alt="Dylan Fino headshot" class="headshot" width="160" height="160" loading="lazy">
-        </div>
-        <div class="name">
-          <h1>Dylan Fino</h1>
-          <p>UX Researcher • Decision-grade research • Strategy + execution</p>
+        <div>
+          <a href="https://www.linkedin.com/in/dylanfino/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <span aria-hidden="true"> • </span>
+          <button id="back-to-top-btn" class="chip" aria-label="Back to top">Back to top</button>
         </div>
 
         <nav class="links" aria-label="Primary">
@@ -315,6 +315,16 @@
         const next = document.documentElement.classList.contains('light') ? 'dark' : 'light';
         apply(next);
         localStorage.setItem('theme', next);
+      });
+    })();
+
+    // Back-to-top button (smooth scroll)
+    (function(){
+      const btn = document.getElementById('back-to-top-btn');
+      if(!btn) return;
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     })();
   </script>
