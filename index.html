@@ -26,7 +26,7 @@
         <nav class="links" aria-label="Primary">
           <a class="chip" href="https://www.linkedin.com/in/dylanfino/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="chip" href="https://docs.google.com/document/d/1b0sC4J8---GXngbutdtbEIxh-UT55Wh9WACzTAlKBwE/edit?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
-          <a class="chip" href="mailto:drfino08@gmail.com">Email</a>
+          <a class="chip" href="mailto:drfino08@gmail.com" target="_blank" rel="noopener noreferrer" title="Email Dylan">Email</a>
         </nav>
 
       </div>
@@ -46,8 +46,11 @@
           <div class="brand-item"><img src="assets/images/qualtrics.svg" alt="Qualtrics" height="48" loading="eager" decoding="async"></div>
           <div class="brand-item"><img src="assets/images/figma.svg" alt="Figma" height="48" loading="eager" decoding="async"></div>
           <div class="brand-item"><img src="assets/images/shopify.svg" alt="Shopify" height="48" loading="eager" decoding="async"></div>
+          <div class="brand-item"><img src="assets/images/samsung.svg" alt="Samsung (brand)" height="48" loading="eager" decoding="async"></div>
+          <div class="brand-item"><img src="assets/images/xfinity.svg" alt="Xfinity" height="48" loading="eager" decoding="async"></div>
           <div class="brand-item"><img src="assets/images/usertesting.svg" alt="UserTesting" height="48" loading="eager" decoding="async"></div>
           <div class="brand-item"><img src="assets/images/python.svg" alt="Python" height="48" loading="eager" decoding="async"></div>
+          <div class="brand-item"><img src="assets/images/chatgpt.svg" alt="ChatGPT" height="48" loading="eager" decoding="async"></div>
         </div>
       </div>
     </header>
@@ -219,8 +222,9 @@
     <footer>
       <div>© <span id="y"></span> Dylan Fino</div>
       <div>
+        <a href="https://www.linkedin.com/in/dylanfino/" target="_blank" rel="noreferrer">LinkedIn</a>
         <span aria-hidden="true"> • </span>
-        <a class="chip" href="https://www.linkedin.com/in/dylanfino/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="#" id="back-to-top-btn">Back to top</a>
       </div>
     </footer>
   </div>
@@ -253,6 +257,17 @@
       const track = document.getElementById('brand-track');
       if(!container || !track) return;
 
+      // randomize order on load
+      function shuffleTrack(){
+        const nodes = Array.from(track.children);
+        for(let i = nodes.length - 1; i > 0; i--){
+          const j = Math.floor(Math.random() * (i + 1));
+          [nodes[i], nodes[j]] = [nodes[j], nodes[i]];
+        }
+        // re-append in shuffled order
+        nodes.forEach(n => track.appendChild(n));
+      }
+
       // ensure the track has at least two copies of content so we can loop by half-width
       function ensureClones(){
         const containerWidth = container.clientWidth;
@@ -263,6 +278,8 @@
         }
       }
 
+      // shuffle initial items so order changes on each refresh
+      shuffleTrack();
       ensureClones();
 
       let speed = 40; // pixels per second

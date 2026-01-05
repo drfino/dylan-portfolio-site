@@ -40,8 +40,8 @@ a:hover{ text-decoration: underline; text-underline-offset: 3px; }
 header{
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
-  padding: 26px;
+  gap: 14px;
+  padding: 20px;
   border: 1px solid var(--border);
   background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
   border-radius: var(--radius2);
@@ -52,7 +52,7 @@ header{
 .topline{
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
@@ -77,7 +77,7 @@ header{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  align-items: flex-start;
+  align-items: center;
 }
 .chip{
   display: inline-flex;
@@ -97,10 +97,10 @@ header{
 }
 
 .summary{
-  margin-top: 4px;
+  margin-top: 6px;
   color: var(--muted);
-  font-size: 16px;
-  max-width: 78ch;
+  font-size: 15.5px;
+  max-width: 72ch;
 }
 
 .section{
@@ -239,9 +239,11 @@ footer{
 }
 
 @media (min-width: 820px){
+  header{ grid-template-columns: auto 1fr; align-items: center; }
   .card.featured{ grid-column: span 12; }
   .card.half{ grid-column: span 6; }
   .twocol{ grid-template-columns: 1fr 1fr; }
+  .topline{ gap: 18px; }
 }
 @media (prefers-reduced-motion: no-preference){
   .card{ transition: transform 180ms ease, background 180ms ease; }
