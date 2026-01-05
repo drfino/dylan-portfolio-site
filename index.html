@@ -12,7 +12,6 @@
 <body>
 
   <div class="wrap">
-    <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle light mode"><span class="knob" aria-hidden="true"></span></button>
     <header>
       <div class="topline">
         <div class="headshot-wrap">
@@ -143,7 +142,7 @@
                 <li>Competitive pressure on speed was decreasing (slower windows normalized by some marketplaces).</li>
               </ul>
 
-              <p><strong>Optional:</strong> Add a “Read full writeup (PDF)” link here once you have a public version.</p>
+
             </div>
           </details>
         </article>
@@ -238,7 +237,6 @@
                 Built the evidence base for Prime feature-set and branding guidelines for off-Amazon programs—clarifying customer expectations,
                 seller value trade-offs, and brand risk boundaries.
               </p>
-              <p><strong>Optional:</strong> Add a one-page PDF link or a short “methods + sample output” screenshot if/when you can share.</p>
             </div>
           </details>
         </article>
@@ -270,7 +268,7 @@
       <div>© <span id="y"></span> Dylan Fino</div>
       <div>
         <span aria-hidden="true"> • </span>
-        <a href="https://www.linkedin.com/in/dylanfino/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="chip" href="https://www.linkedin.com/in/dylanfino/" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </footer>
   </div>
@@ -294,26 +292,7 @@
       });
     });
 
-    // Theme toggle (light/dark) with persistence
-    (function(){
-      const toggle = document.getElementById('theme-toggle');
-      if(!toggle) return;
-      const apply = (t) => {
-        if(t === 'light') document.documentElement.classList.add('light');
-        else document.documentElement.classList.remove('light');
-        toggle.setAttribute('aria-pressed', t === 'light');
-        toggle.textContent = t === 'light' ? '🌞 Light' : '🌙 Dark';
-      };
-
-      const stored = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-      apply(stored);
-
-      toggle.addEventListener('click', () => {
-        const next = document.documentElement.classList.contains('light') ? 'dark' : 'light';
-        apply(next);
-        localStorage.setItem('theme', next);
-      });
-    })();
+    
 
     // Back-to-top button (smooth scroll)
     (function(){
