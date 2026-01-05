@@ -253,11 +253,12 @@ footer{
 /* Brand scroller */
 .brand-scroller{ margin-top: 18px; overflow: hidden; }
 /* Standardize brand logo sizing: keep aspect ratio, limit height for consistency */
+.brand-item{ flex: 0 0 auto; }
 .brand-item img{ width: auto; height: 48px; max-height: 48px; display:block; opacity:0.95; }
 
-/* animate duplicated track for seamless scroll */
-.brand-wrap{ display:flex; min-width:100%; overflow:hidden; }
-.brand-anim{ display:flex; gap:40px; align-items:center; animation:brand-scroll 20s linear infinite; }
+/* animate duplicated track for seamless scroll (animate the wrapper, not each track) */
+.brand-wrap{ display:flex; min-width:100%; overflow:hidden; align-items:center; will-change: transform; animation:brand-scroll 20s linear infinite; }
+.brand-anim{ display:flex; gap:40px; align-items:center; min-width: max-content; }
 
 @keyframes brand-scroll{
   from{ transform: translateX(0%); }
