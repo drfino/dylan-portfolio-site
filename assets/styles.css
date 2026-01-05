@@ -275,3 +275,16 @@ footer{
 @media (min-width: 600px){
   .headshot{ width: 160px; height: 160px; }
 }
+
+/* NPS joke section */
+.nps-section{ margin-top: 40px; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius2); background: rgba(255,255,255,0.04); text-align: center; }
+.nps-section h3{ margin: 0 0 16px; font-size: 18px; color: var(--text); }
+.nps-buttons{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; align-items:center; }
+.nps-btn{ padding: 10px 14px; border: 1px solid var(--border); background: rgba(255,255,255,0.06); color: var(--text); border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; transition: background 160ms ease; user-select: none; }
+.nps-btn:hover{ background: rgba(255,255,255,0.10); }
+.nps-emoji{ display:inline-block; font-size: 32px; animation: poof 600ms ease-out forwards; }
+
+@keyframes poof{
+  0%{ opacity: 1; transform: scale(0.5); }
+  100%{ opacity: 0; transform: scale(2); }
+}

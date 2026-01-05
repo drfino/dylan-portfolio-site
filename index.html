@@ -23,9 +23,9 @@
         </div>
 
         <nav class="links" aria-label="Primary">
-          <a class="chip" href="TODO_LINKEDIN_URL" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="chip" href="TODO_RESUME_URL" target="_blank" rel="noreferrer">Resume</a>
-          <a class="chip" href="mailto:TODO_EMAIL">Email</a>
+          <a class="chip" href="https://www.linkedin.com/in/dylanfino/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="chip" href="https://docs.google.com/document/d/1b0sC4J8---GXngbutdtbEIxh-UT55Wh9WACzTAlKBwE/edit?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
+          <a class="chip" href="mailto:drfino08@gmail.com">Email</a>
         </nav>
       </div>
 
@@ -246,6 +246,24 @@
       </div>
     </main>
 
+    <!-- NPS joke -->
+    <section class="nps-section">
+      <h3>After reviewing this portfolio, how likely are you to recommend Dylan to a friend?</h3>
+      <div class="nps-buttons" id="nps-buttons">
+        <button class="nps-btn" data-score="0">0</button>
+        <button class="nps-btn" data-score="1">1</button>
+        <button class="nps-btn" data-score="2">2</button>
+        <button class="nps-btn" data-score="3">3</button>
+        <button class="nps-btn" data-score="4">4</button>
+        <button class="nps-btn" data-score="5">5</button>
+        <button class="nps-btn" data-score="6">6</button>
+        <button class="nps-btn" data-score="7">7</button>
+        <button class="nps-btn" data-score="8">8</button>
+        <button class="nps-btn" data-score="9">9</button>
+        <button class="nps-btn" data-score="10">10</button>
+      </div>
+    </section>
+
     <footer>
       <div>© <span id="y"></span> Dylan Fino</div>
       <div>
@@ -258,6 +276,22 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // NPS joke handler
+    document.querySelectorAll(".nps-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const rect = e.target.getBoundingClientRect();
+        const emoji = document.createElement("span");
+        emoji.className = "nps-emoji";
+        emoji.textContent = "😂";
+        emoji.style.position = "fixed";
+        emoji.style.left = (rect.left + rect.width / 2) + "px";
+        emoji.style.top = (rect.top + rect.height / 2) + "px";
+        emoji.style.transform = "translate(-50%, -50%)";
+        document.body.appendChild(emoji);
+        e.target.remove();
+      });
+    });
   </script>
 </body>
 </html>
