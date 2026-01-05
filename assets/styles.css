@@ -252,13 +252,10 @@ footer{
 
 /* Brand scroller */
 .brand-scroller{ margin-top: 18px; overflow: hidden; }
-.brand-row{ display:flex; align-items:center; gap:40px; }
-.brand-inner{ display:flex; gap:40px; align-items:center; }
 /* Standardize brand logo sizing: keep aspect ratio, limit height for consistency */
 .brand-item img{ width: auto; height: 48px; max-height: 48px; display:block; opacity:0.95; }
 
 /* animate duplicated track for seamless scroll */
-.brand-track{ display:flex; gap:40px; align-items:center; white-space:nowrap; }
 .brand-wrap{ display:flex; min-width:100%; overflow:hidden; }
 .brand-anim{ display:flex; gap:40px; align-items:center; animation:brand-scroll 20s linear infinite; }
 
@@ -273,6 +270,12 @@ footer{
 
 @media (min-width: 1200px){
   .brand-item img{ height: 56px; max-height: 56px; }
+}
+
+/* Header spacing tweak for name + headshot */
+@media (min-width: 820px){
+  .topline{ align-items: center; }
+  .name{ margin-left: 12px; max-width: 60%; }
 }
 
 /* Headshot styles */
