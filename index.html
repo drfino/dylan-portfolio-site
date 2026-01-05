@@ -27,6 +27,7 @@
           <a class="chip" href="https://docs.google.com/document/d/1b0sC4J8---GXngbutdtbEIxh-UT55Wh9WACzTAlKBwE/edit?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
           <a class="chip" href="mailto:drfino08@gmail.com">Email</a>
         </nav>
+        <button id="theme-toggle" class="chip" aria-pressed="false" title="Toggle light mode">🌙 Dark</button>
       </div>
 
       <p class="summary">
@@ -271,9 +272,8 @@
     <footer>
       <div>© <span id="y"></span> Dylan Fino</div>
       <div>
-        <a href="#work">Back to top</a>
         <span aria-hidden="true"> • </span>
-        <a href="TODO_LINKEDIN_URL" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/dylanfino/" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </footer>
   </div>
@@ -296,6 +296,27 @@
         e.target.remove();
       });
     });
+
+    // Theme toggle (light/dark) with persistence
+    (function(){
+      const toggle = document.getElementById('theme-toggle');
+      if(!toggle) return;
+      const apply = (t) => {
+        if(t === 'light') document.documentElement.classList.add('light');
+        else document.documentElement.classList.remove('light');
+        toggle.setAttribute('aria-pressed', t === 'light');
+        toggle.textContent = t === 'light' ? '🌞 Light' : '🌙 Dark';
+      };
+
+      const stored = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      apply(stored);
+
+      toggle.addEventListener('click', () => {
+        const next = document.documentElement.classList.contains('light') ? 'dark' : 'light';
+        apply(next);
+        localStorage.setItem('theme', next);
+      });
+    })();
   </script>
 </body>
 </html>

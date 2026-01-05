@@ -12,9 +12,22 @@
   --max: 1050px;
 }
 
+/* Light mode variables applied to the html element when .light is present */
+html.light{
+  --bg: #f7f7f8;
+  --panel: rgba(0,0,0,0.04);
+  --panel2: rgba(0,0,0,0.03);
+  --text: #0b0f14;
+  --muted: rgba(0,0,0,0.65);
+  --faint: rgba(0,0,0,0.45);
+  --border: rgba(0,0,0,0.08);
+  --shadow: 0 8px 20px rgba(16,24,40,0.06);
+}
+
 *{ box-sizing: border-box; }
 html, body { height: 100%; }
 body{
+  transition: background 220ms ease, color 220ms ease;
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   background:
