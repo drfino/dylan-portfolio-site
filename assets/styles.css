@@ -269,10 +269,6 @@ footer{
   .brand-item img{ height: 36px; max-height: 36px; }
 }
 
-@media (max-width: 640px){
-  .brand-item img{ height: 36px; max-height: 36px; }
-}
-
 @media (min-width: 1200px){
   .brand-item img{ height: 56px; max-height: 56px; }
 }
