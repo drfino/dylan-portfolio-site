@@ -1,10 +1,6 @@
 # Dylan Fino - UX Research Portfolio
 
-A modern, responsive portfolio website showcasing UX research work and expertise in mixed-methods research, strategy-defining insights, and product decision-making.
-
-## Overview
-
-This portfolio demonstrates Dylan Fino's approach to UX research through three detailed case studies spanning research at scale, research infrastructure, and rapid usability testing. The site features expandable case study details, an animated brand carousel, and responsive design across all device sizes.
+Built and launched in a day with the help of Copilot AI coding assistant.
 
 ## Project Structure
 
@@ -160,4 +156,3 @@ This portfolio is a personal project. Feel free to use as a template for your ow
 ## Contact
 
 - **LinkedIn:** [linkedin.com/in/dylanfino/](https://www.linkedin.com/in/dylanfino/)
-- **Email:** drfino08@gmail.com
